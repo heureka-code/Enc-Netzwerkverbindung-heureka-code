@@ -29,7 +29,6 @@ repos:
     hooks:
     -   id: isort
         name: isort
-        entry.: isort .
-        language: python
+        entry: isort .
         pass_filenames: false
         always_run: true
