@@ -54,6 +54,7 @@ class SocketServer:
                 uebergebe_sk_pk(stream_klasse=self._server_kontext.client_handler, server_kontext=self._server_kontext)
         ) as self.server:
             self._logger.debug("Server wurde fertig gestartet")
+            self.__geschlossen = False
             try:
                 self.server.serve_forever()
             except KeyboardInterrupt:
