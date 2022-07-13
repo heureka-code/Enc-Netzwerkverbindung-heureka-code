@@ -2,11 +2,7 @@ import socket
 from weakref import finalize
 
 from enc_netzwerkverbindung_heureka_code._generell.verbindung import BasisCOM
-
-
-class VerbindungFehlgeschlagen(Exception):
-    """ Wird ausgeloest, wenn keine Verbindung zum Zielcomputer hergestellt werden konnte """
-    pass
+from enc_netzwerkverbindung_heureka_code.exceptions import VerbindungFehlgeschlagen
 
 
 class ClientVerbindungsVerwalter(BasisCOM):
