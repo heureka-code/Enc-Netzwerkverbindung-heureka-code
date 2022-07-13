@@ -14,3 +14,6 @@ Dieses Projekt zielt darauf ab, eine einfache Möglichkeit für eine verschluess
 ```shell
 pip install Enc-Netzwerkverbindung-heureka-code
 ```
+
+## Dokumentation
+Die Dokumentation ist auf [https://heureka-code.github.io/Enc-Netzwerkverbindung-heureka-code/](https://heureka-code.github.io/Enc-Netzwerkverbindung-heureka-code/) einsehbar.
