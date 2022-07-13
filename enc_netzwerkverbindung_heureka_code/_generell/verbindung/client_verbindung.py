@@ -1,7 +1,7 @@
 import socket
 from weakref import finalize
 
-from .abc_verbindung import VerbindungsVerwalter
+from enc_netzwerkverbindung_heureka_code._generell.verbindung import BasisCOM
 
 
 class VerbindungFehlgeschlagen(Exception):
@@ -9,7 +9,7 @@ class VerbindungFehlgeschlagen(Exception):
     pass
 
 
-class ClientVerbindungsVerwalter(VerbindungsVerwalter):
+class ClientVerbindungsVerwalter(BasisCOM):
     """ Verwaltet die Clientseitige Netzwerkverbindung """
     def __init__(self, host: str, port: int):
         """

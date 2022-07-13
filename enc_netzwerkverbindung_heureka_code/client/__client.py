@@ -5,7 +5,7 @@ from enc_netzwerkverbindung_heureka_code._generell import (AESKodierung,
                                                            verbindung)
 
 
-class CryptoClient:
+class CryptoClient(verbindung.BasisCOM):
     """ Verwaltet die Clientseitige verschluesselte Verbindung """
     def __init__(self, host: str, port: int = 3901):
         """

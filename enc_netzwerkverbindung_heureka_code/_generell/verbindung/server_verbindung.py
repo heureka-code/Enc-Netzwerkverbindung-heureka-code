@@ -1,7 +1,7 @@
-from .abc_verbindung import VerbindungsVerwalter
+from enc_netzwerkverbindung_heureka_code._generell.verbindung import BasisCOM
 
 
-class ServerVerbindungsVerwalter(VerbindungsVerwalter):
+class ServerVerbindungsVerwalter(BasisCOM):
     """ Verwaltet die Serverseitige Netzwerkverbindung """
     def __init__(self, wfile, rfile):
         """

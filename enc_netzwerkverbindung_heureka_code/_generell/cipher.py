@@ -1,10 +1,9 @@
-from enc_netzwerkverbindung_heureka_code._generell.verbindung import \
-    VerbindungsVerwalter
+from enc_netzwerkverbindung_heureka_code._generell.verbindung import BasisCOM
 
 
-class EncVerbindung:
+class EncVerbindung(BasisCOM):
     """ Verwaltet eine verschluesselte Verbindung mit AES """
-    def __init__(self, verbindung: VerbindungsVerwalter, aes_kodierung):
+    def __init__(self, verbindung: BasisCOM, aes_kodierung):
         """
         Verwaltet eine verschluesselte Verbindung mit AES
 

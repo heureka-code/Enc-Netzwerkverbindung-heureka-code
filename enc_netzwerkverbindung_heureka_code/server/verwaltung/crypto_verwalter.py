@@ -1,15 +1,13 @@
-from base64 import b64decode
 from logging import getLogger
 
 from enc_netzwerkverbindung_heureka_code._generell import (AESKodierung,
-                                                           RSAKodierung,
-                                                           RSASchluessel)
+                                                           RSAKodierung)
 from enc_netzwerkverbindung_heureka_code._generell.cipher import EncVerbindung
-from enc_netzwerkverbindung_heureka_code._generell.verbindung.server_verbindung import \
-    ServerVerbindungsVerwalter
+from enc_netzwerkverbindung_heureka_code._generell.verbindung import (
+    BasisCOM, ServerVerbindungsVerwalter)
 
 
-class CryptoVerwalter:
+class CryptoVerwalter(BasisCOM):
     """ Verwaltet den verschluesselten Verbindungsaufbau des Servers """
     def __init__(self, verbindung: ServerVerbindungsVerwalter, rsa):
         """
