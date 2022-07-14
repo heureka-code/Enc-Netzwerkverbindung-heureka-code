@@ -3,7 +3,7 @@ from typing import final
 
 from Crypto.PublicKey.RSA import RsaKey
 
-from enc_netzwerkverbindung_heureka_code._generell.rsa import RSASchluessel
+from enc_netzwerkverbindung._generell.rsa import RSASchluessel
 
 
 class RSASchluesselpaar(ABC):

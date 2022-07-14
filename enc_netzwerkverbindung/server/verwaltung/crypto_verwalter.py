@@ -1,9 +1,8 @@
 from logging import getLogger
 
-from enc_netzwerkverbindung_heureka_code._generell import (AESKodierung,
-                                                           RSAKodierung)
-from enc_netzwerkverbindung_heureka_code._generell.cipher import EncVerbindung
-from enc_netzwerkverbindung_heureka_code._generell.verbindung import (
+from enc_netzwerkverbindung._generell import AESKodierung, RSAKodierung
+from enc_netzwerkverbindung._generell.cipher import EncVerbindung
+from enc_netzwerkverbindung._generell.verbindung import (
     BasisCOM, ServerVerbindungsVerwalter)
 
 

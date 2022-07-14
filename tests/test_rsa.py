@@ -3,8 +3,7 @@ import unittest
 from hypothesis import example, given
 from hypothesis import strategies as st
 
-from enc_netzwerkverbindung_heureka_code._generell import (RSAKodierung,
-                                                           RSASchluessel)
+from enc_netzwerkverbindung._generell import RSAKodierung, RSASchluessel
 
 
 class TestRSA(unittest.TestCase):

@@ -1,4 +1,4 @@
-from enc_netzwerkverbindung_heureka_code._generell.verbindung import BasisCOM
+from enc_netzwerkverbindung._generell.verbindung import BasisCOM
 
 
 class EncVerbindung(BasisCOM):

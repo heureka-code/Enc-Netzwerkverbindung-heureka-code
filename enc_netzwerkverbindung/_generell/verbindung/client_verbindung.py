@@ -1,8 +1,8 @@
 import socket
 from weakref import finalize
 
-from enc_netzwerkverbindung_heureka_code._generell.verbindung import BasisCOM
-from enc_netzwerkverbindung_heureka_code.exceptions import VerbindungFehlgeschlagen
+from enc_netzwerkverbindung._generell.verbindung import BasisCOM
+from enc_netzwerkverbindung.exceptions import VerbindungFehlgeschlagen
 
 
 class ClientVerbindungsVerwalter(BasisCOM):

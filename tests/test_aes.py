@@ -3,8 +3,7 @@ import unittest
 from hypothesis import example, given
 from hypothesis import strategies as st
 
-from enc_netzwerkverbindung_heureka_code._generell import (AESKodierung,
-                                                           AESSchluessel)
+from enc_netzwerkverbindung._generell import AESKodierung, AESSchluessel
 
 
 class TestAES(unittest.TestCase):

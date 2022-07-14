@@ -1,6 +1,6 @@
 from Crypto.PublicKey.RSA import RsaKey
 
-from enc_netzwerkverbindung_heureka_code._generell import RSASchluessel
+from enc_netzwerkverbindung._generell import RSASchluessel
 
 from .rsa_basis import RSASchluesselpaar
 

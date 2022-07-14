@@ -2,8 +2,8 @@ import socketserver
 from logging import getLogger
 from weakref import finalize
 
-import enc_netzwerkverbindung_heureka_code.server.__kontext as s_kontext
-from enc_netzwerkverbindung_heureka_code._generell import RSASchluessel, get_ip
+import enc_netzwerkverbindung.server.__kontext as s_kontext
+from enc_netzwerkverbindung._generell import RSASchluessel, get_ip
 
 from .__client_handler import BasisClientHandler
 from .__uebergabe_sk_pk import uebergebe_sk_pk

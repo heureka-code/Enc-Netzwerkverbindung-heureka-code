@@ -1,8 +1,6 @@
-from enc_netzwerkverbindung_heureka_code._generell import (AESKodierung,
-                                                           AESSchluessel,
-                                                           EncVerbindung,
-                                                           RSAKodierung,
-                                                           verbindung)
+from enc_netzwerkverbindung._generell import (AESKodierung, AESSchluessel,
+                                              EncVerbindung, RSAKodierung,
+                                              verbindung)
 
 
 class CryptoClient(verbindung.BasisCOM):

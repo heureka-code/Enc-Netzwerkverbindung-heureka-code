@@ -2,9 +2,9 @@ import socketserver
 from abc import ABC, abstractmethod
 from typing import final
 
-from enc_netzwerkverbindung_heureka_code._generell.verbindung import \
+from enc_netzwerkverbindung._generell.verbindung import \
     ServerVerbindungsVerwalter
-from enc_netzwerkverbindung_heureka_code.server.__kontext import ServerKontext
+from enc_netzwerkverbindung.server.__kontext import ServerKontext
 
 from .verwaltung.crypto_verwalter import CryptoVerwalter
 

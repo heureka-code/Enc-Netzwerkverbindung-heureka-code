@@ -2,7 +2,7 @@ from abc import ABC, abstractmethod
 from logging import Logger, LoggerAdapter
 from typing import final
 
-import enc_netzwerkverbindung_heureka_code.server.__client_handler as cl_h
+import enc_netzwerkverbindung.server.__client_handler as cl_h
 
 from .verwaltung import RSASchluesselpaar, RSAVerwalter
 
