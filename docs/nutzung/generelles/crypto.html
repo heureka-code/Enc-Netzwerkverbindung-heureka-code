@@ -1,0 +1,132 @@
+
+<!DOCTYPE html>
+
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Verschlüsselung &#8212; Enc-Netzwerkverbindung  Dokumentation</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/classic.css" />
+    
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/translations.js"></script>
+    
+    <link rel="index" title="Stichwortverzeichnis" href="../../genindex.html" />
+    <link rel="search" title="Suche" href="../../search.html" />
+    <link rel="next" title="RSA" href="rsa.html" />
+    <link rel="prev" title="Basisfunktionalitäten" href="generelles.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="Stichwortverzeichnis"
+             accesskey="I">Index</a></li>
+        <li class="right" >
+          <a href="rsa.html" title="RSA"
+             accesskey="N">weiter</a> |</li>
+        <li class="right" >
+          <a href="generelles.html" title="Basisfunktionalitäten"
+             accesskey="P">zurück</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">Enc-Netzwerkverbindung  Dokumentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../nutzung.html" >Nutzung</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="generelles.html" accesskey="U">Basisfunktionalitäten</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Verschlüsselung</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="verschlusselung">
+<h1>Verschlüsselung<a class="headerlink" href="#verschlusselung" title="Permalink to this heading">¶</a></h1>
+<p>Als asynchrone Verschlüsselung wird RSA, als synchrone AES verwendet.
+Die hier gezeigten „Mantelklassen“ verwenden pycryptodome (<a class="reference external" href="https://pypi.org/project/pycryptodome/">https://pypi.org/project/pycryptodome/</a>).
+Diese Klassen werden intern genutzt und werden nicht durch den Anwender verwendet.</p>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">Verfahren</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="rsa.html">RSA</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="rsa.html#schlusselgenerierung">Schlüsselgenerierung</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rsa.html#kodierung">Kodierung</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rsa.html#der-mantel-serverspezifisch">Der Mantel (Serverspezifisch)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="aes.html">AES</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="aes.html#schlusselgenerierung">Schlüsselgenerierung</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aes.html#kodierung">Kodierung</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h4>Vorheriges Thema</h4>
+    <p class="topless"><a href="generelles.html"
+                          title="vorheriges Kapitel">Basisfunktionalitäten</a></p>
+  </div>
+  <div>
+    <h4>Nächstes Thema</h4>
+    <p class="topless"><a href="rsa.html"
+                          title="nächstes Kapitel">RSA</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>Diese Seite</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../_sources/nutzung/generelles/crypto.rst.txt"
+            rel="nofollow">Quellcode anzeigen</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Schnellsuche</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Los" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="Stichwortverzeichnis"
+             >Index</a></li>
+        <li class="right" >
+          <a href="rsa.html" title="RSA"
+             >weiter</a> |</li>
+        <li class="right" >
+          <a href="generelles.html" title="Basisfunktionalitäten"
+             >zurück</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">Enc-Netzwerkverbindung  Dokumentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../nutzung.html" >Nutzung</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="generelles.html" >Basisfunktionalitäten</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Verschlüsselung</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2022, heureka-code.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.0.2.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,228 @@
+
+<!DOCTYPE html>
+
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AES &#8212; Enc-Netzwerkverbindung  Dokumentation</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/classic.css" />
+    
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/translations.js"></script>
+    
+    <link rel="index" title="Stichwortverzeichnis" href="../../genindex.html" />
+    <link rel="search" title="Suche" href="../../search.html" />
+    <link rel="next" title="Netzwerkverbindung" href="verbindung.html" />
+    <link rel="prev" title="RSA" href="rsa.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="Stichwortverzeichnis"
+             accesskey="I">Index</a></li>
+        <li class="right" >
+          <a href="verbindung.html" title="Netzwerkverbindung"
+             accesskey="N">weiter</a> |</li>
+        <li class="right" >
+          <a href="rsa.html" title="RSA"
+             accesskey="P">zurück</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">Enc-Netzwerkverbindung  Dokumentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../nutzung.html" >Nutzung</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="generelles.html" >Basisfunktionalitäten</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="crypto.html" accesskey="U">Verschlüsselung</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">AES</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="aes">
+<h1>AES<a class="headerlink" href="#aes" title="Permalink to this heading">¶</a></h1>
+<div class="section" id="schlusselgenerierung">
+<h2>Schlüsselgenerierung<a class="headerlink" href="#schlusselgenerierung" title="Permalink to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="enc_netzwerkverbindung._generell.AESSchluessel">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">enc_netzwerkverbindung._generell.</span></span><span class="sig-name descname"><span class="pre">AESSchluessel</span></span><a class="headerlink" href="#enc_netzwerkverbindung._generell.AESSchluessel" title="Link zu dieser Definition">¶</a></dt>
+<dd><p>Verwaltet die AES-Verschluesselung der Verbindung</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="enc_netzwerkverbindung._generell.AESSchluessel.generiere_aes_schluessel">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">generiere_aes_schluessel</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bytes</span></span></span><a class="headerlink" href="#enc_netzwerkverbindung._generell.AESSchluessel.generiere_aes_schluessel" title="Link zu dieser Definition">¶</a></dt>
+<dd><p>Generiert einen neuen kryptographischen AES Schlüssel für die Verbindung.</p>
+<p>Fuer das Passwort wird der SHA256-Hash aus KEY_LEN-Mal zufaellig aus CHARS ausgewaehlten Zeichen gebildet.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Rückgabe</dt>
+<dd class="field-odd"><p>Der generierte Schlüssel</p>
+</dd>
+<dt class="field-even">Rückgabetyp</dt>
+<dd class="field-even"><p>bytes</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">enc_netzwerkverbindung._generell</span> <span class="kn">import</span> <span class="n">AESSchluessel</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">key</span> <span class="o">=</span> <span class="n">AESSchluessel</span><span class="o">.</span><span class="n">generiere_aes_schluessel</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">AESSchluessel</span><span class="o">.</span><span class="n">CHARS</span>
+<span class="go">&#39;abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!&quot;#$%&amp;\&#39;()*+,-./:;&lt;=&gt;?@[\\]^_`{|}~&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Die Länge des zu erstellenden Passworts (Defaultwert)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">AESSchluessel</span><span class="o">.</span><span class="n">KEY_LEN</span>
+<span class="go">139</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Der eigentliche Schlüssel ist allerdings gehasht und hat eine feste Länge</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+<span class="go">32</span>
+</pre></div>
+</div>
+<p>Verschlüsselt wird allerdings in einer anderen Klasse</p>
+</div>
+<div class="section" id="kodierung">
+<h2>Kodierung<a class="headerlink" href="#kodierung" title="Permalink to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="enc_netzwerkverbindung._generell.AESKodierung">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">enc_netzwerkverbindung._generell.</span></span><span class="sig-name descname"><span class="pre">AESKodierung</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bytes</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#enc_netzwerkverbindung._generell.AESKodierung" title="Link zu dieser Definition">¶</a></dt>
+<dd><p>Verwaltet die AES-Verschluesselung der Verbindung</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="enc_netzwerkverbindung._generell.AESKodierung.decrypt">
+<span class="sig-name descname"><span class="pre">decrypt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">c</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bytes</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bytes</span></span></span><a class="headerlink" href="#enc_netzwerkverbindung._generell.AESKodierung.decrypt" title="Link zu dieser Definition">¶</a></dt>
+<dd><p>Entschluesselt die gegebene Nachricht</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameter</dt>
+<dd class="field-odd"><p><strong>c</strong> – Die zu entschluesselnde Nachricht</p>
+</dd>
+<dt class="field-even">Rückgabe</dt>
+<dd class="field-even"><p>Die entschluesselte Nachricht</p>
+</dd>
+<dt class="field-odd">Rückgabetyp</dt>
+<dd class="field-odd"><p>bytes</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="enc_netzwerkverbindung._generell.AESKodierung.encrypt">
+<span class="sig-name descname"><span class="pre">encrypt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">msg</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bytes</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bytes</span></span></span><a class="headerlink" href="#enc_netzwerkverbindung._generell.AESKodierung.encrypt" title="Link zu dieser Definition">¶</a></dt>
+<dd><p>Verschluesselt die gegebene Nachricht</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameter</dt>
+<dd class="field-odd"><p><strong>msg</strong> – Die zu verschluesselnde Nachricht</p>
+</dd>
+<dt class="field-even">Rückgabe</dt>
+<dd class="field-even"><p>Die verschluesselte Nachricht</p>
+</dd>
+<dt class="field-odd">Rückgabetyp</dt>
+<dd class="field-odd"><p>bytes</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="enc_netzwerkverbindung._generell.AESKodierung.key">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">key</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bytes</span></em><a class="headerlink" href="#enc_netzwerkverbindung._generell.AESKodierung.key" title="Link zu dieser Definition">¶</a></dt>
+<dd><p>Der zu verwendende Schluessel</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="enc_netzwerkverbindung._generell.AESKodierung.new">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">new</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#enc_netzwerkverbindung._generell.AESKodierung.new" title="Link zu dieser Definition">¶</a></dt>
+<dd><p>Erstellt eine neue Kodierung mit zufaelligem Schluessel</p>
+</dd></dl>
+
+</dd></dl>
+
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">enc_netzwerkverbindung._generell</span> <span class="kn">import</span> <span class="n">AESSchluessel</span><span class="p">,</span> <span class="n">AESKodierung</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">key</span> <span class="o">=</span> <span class="n">AESSchluessel</span><span class="o">.</span><span class="n">generiere_aes_schluessel</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">msg</span> <span class="o">=</span> <span class="sa">b</span><span class="s2">&quot;Test&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cipher</span> <span class="o">=</span> <span class="n">AESKodierung</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="n">cipher</span><span class="o">.</span><span class="n">encrypt</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">dec</span> <span class="o">=</span> <span class="n">cipher</span><span class="o">.</span><span class="n">decrypt</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">msg</span> <span class="o">==</span> <span class="n">dec</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="../../index.html">Inhaltsverzeichnis</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">AES</a><ul>
+<li><a class="reference internal" href="#schlusselgenerierung">Schlüsselgenerierung</a></li>
+<li><a class="reference internal" href="#kodierung">Kodierung</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div>
+    <h4>Vorheriges Thema</h4>
+    <p class="topless"><a href="rsa.html"
+                          title="vorheriges Kapitel">RSA</a></p>
+  </div>
+  <div>
+    <h4>Nächstes Thema</h4>
+    <p class="topless"><a href="verbindung.html"
+                          title="nächstes Kapitel">Netzwerkverbindung</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>Diese Seite</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../_sources/nutzung/generelles/aes.rst.txt"
+            rel="nofollow">Quellcode anzeigen</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Schnellsuche</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Los" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="Stichwortverzeichnis"
+             >Index</a></li>
+        <li class="right" >
+          <a href="verbindung.html" title="Netzwerkverbindung"
+             >weiter</a> |</li>
+        <li class="right" >
+          <a href="rsa.html" title="RSA"
+             >zurück</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">Enc-Netzwerkverbindung  Dokumentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../nutzung.html" >Nutzung</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="generelles.html" >Basisfunktionalitäten</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="crypto.html" >Verschlüsselung</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">AES</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2022, heureka-code.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.0.2.
+    </div>
+  </body>
+</html>

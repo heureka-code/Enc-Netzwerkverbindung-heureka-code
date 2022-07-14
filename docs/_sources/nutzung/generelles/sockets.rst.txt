@@ -1,0 +1,18 @@
+Socketabstraktion
+=====================
+
+
+Client
+-------------
+Für den Client gibt es eine Implementierung, die den Socket verwaltet.
+Die Nachrichten werden hierbei allerdings nicht verschlüsselt.
+
+.. autoclass:: enc_netzwerkverbindung._generell.verbindung.ClientVerbindungsVerwalter
+    :members:
+
+Server
+--------------
+Das Gegenstück zum eben gezeigten. Auch hier wird (noch) nicht verschlüsselt
+
+.. autoclass:: enc_netzwerkverbindung._generell.verbindung.ServerVerbindungsVerwalter
+    :members:

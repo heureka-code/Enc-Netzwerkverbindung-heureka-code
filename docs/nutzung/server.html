@@ -1,0 +1,286 @@
+
+<!DOCTYPE html>
+
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Der Server &#8212; Enc-Netzwerkverbindung  Dokumentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/classic.css" />
+    
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/translations.js"></script>
+    
+    <link rel="index" title="Stichwortverzeichnis" href="../genindex.html" />
+    <link rel="search" title="Suche" href="../search.html" />
+    <link rel="prev" title="Der Client" href="client.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="Stichwortverzeichnis"
+             accesskey="I">Index</a></li>
+        <li class="right" >
+          <a href="client.html" title="Der Client"
+             accesskey="P">zurück</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Enc-Netzwerkverbindung  Dokumentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="nutzung.html" accesskey="U">Nutzung</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Der Server</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="der-server">
+<h1>Der Server<a class="headerlink" href="#der-server" title="Permalink to this heading">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="enc_netzwerkverbindung.server.SocketServer">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">enc_netzwerkverbindung.server.</span></span><span class="sig-name descname"><span class="pre">SocketServer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">host</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'0.0.0.0'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">port</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">3901</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#enc_netzwerkverbindung.server.SocketServer" title="Link zu dieser Definition">¶</a></dt>
+<dd><p>Verwaltet den Server</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="enc_netzwerkverbindung.server.SocketServer.close">
+<span class="sig-name descname"><span class="pre">close</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#enc_netzwerkverbindung.server.SocketServer.close" title="Link zu dieser Definition">¶</a></dt>
+<dd><p>Schliesst die Serververbindung</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="enc_netzwerkverbindung.server.SocketServer.start">
+<span class="sig-name descname"><span class="pre">start</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">server_kontext</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#enc_netzwerkverbindung.server.ServerKontext" title="enc_netzwerkverbindung.server.__kontext.ServerKontext"><span class="pre">ServerKontext</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#enc_netzwerkverbindung.server.SocketServer.start" title="Link zu dieser Definition">¶</a></dt>
+<dd><p>Verwaltet den Serverprozess</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="anpassung">
+<h1>Anpassung<a class="headerlink" href="#anpassung" title="Permalink to this heading">¶</a></h1>
+<p>Um den Server zu starten, wird ein Kontext erzeugt und übergeben.
+Dieser Kontext bietet verschiedene Möglichkeiten der Anpassung.
+Um einen neuen Kontext zu erzeugen wird von einer abstrakten Klasse geerbt.</p>
+<div class="section" id="der-kontext">
+<h2>Der Kontext<a class="headerlink" href="#der-kontext" title="Permalink to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="enc_netzwerkverbindung.server.ServerKontext">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">enc_netzwerkverbindung.server.</span></span><span class="sig-name descname"><span class="pre">ServerKontext</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">client_handler</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">type</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#enc_netzwerkverbindung.server.BasisClientHandler" title="enc_netzwerkverbindung.server.__client_handler.BasisClientHandler"><span class="pre">enc_netzwerkverbindung.server.__client_handler.BasisClientHandler</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rsa_schluesselpaar</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="generelles/rsa.html#enc_netzwerkverbindung.server.RSASchluesselpaar" title="enc_netzwerkverbindung.server.__verwaltung.rsa_basis.RSASchluesselpaar"><span class="pre">RSASchluesselpaar</span></a><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#enc_netzwerkverbindung.server.ServerKontext" title="Link zu dieser Definition">¶</a></dt>
+<dd><p>Kontext fuer die Verwaltung des Servers</p>
+<dl class="py property">
+<dt class="sig sig-object py" id="enc_netzwerkverbindung.server.ServerKontext.client_handler">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">client_handler</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">type</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#enc_netzwerkverbindung.server.BasisClientHandler" title="enc_netzwerkverbindung.server.__client_handler.BasisClientHandler"><span class="pre">enc_netzwerkverbindung.server.__client_handler.BasisClientHandler</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#enc_netzwerkverbindung.server.ServerKontext.client_handler" title="Link zu dieser Definition">¶</a></dt>
+<dd><p>Die fuer einkommende Anfragen zu verwendende Klasse</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="enc_netzwerkverbindung.server.ServerKontext.get_client_logger">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_client_logger</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">client</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#enc_netzwerkverbindung.server.ClientInfo" title="enc_netzwerkverbindung.server.__client_info.ClientInfo"><span class="pre">ClientInfo</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'Logger'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'LoggerAdapter'</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#enc_netzwerkverbindung.server.ServerKontext.get_client_logger" title="Link zu dieser Definition">¶</a></dt>
+<dd><p>Generiert einen fuer jeden Client individuellen Logger</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="enc_netzwerkverbindung.server.ServerKontext.get_rsa">
+<em class="property"><span class="pre">final</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_rsa</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="generelles/rsa.html#enc_netzwerkverbindung.server.RSASchluesselpaar" title="enc_netzwerkverbindung.server.__verwaltung.rsa_basis.RSASchluesselpaar"><span class="pre">RSASchluesselpaar</span></a></span></span><a class="headerlink" href="#enc_netzwerkverbindung.server.ServerKontext.get_rsa" title="Link zu dieser Definition">¶</a></dt>
+<dd><p>Liefert das RSA-Schluesselpaar</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="enc_netzwerkverbindung.server.ServerKontext.get_server_logger">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_server_logger</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">server</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#enc_netzwerkverbindung.server.ServerInfo" title="enc_netzwerkverbindung.server.__server_info.ServerInfo"><span class="pre">ServerInfo</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'Logger'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'LoggerAdapter'</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#enc_netzwerkverbindung.server.ServerKontext.get_server_logger" title="Link zu dieser Definition">¶</a></dt>
+<dd><p>Generiert einen Logger fuer den Server</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="der-clienthandler">
+<h2>Der ClientHandler<a class="headerlink" href="#der-clienthandler" title="Permalink to this heading">¶</a></h2>
+<p>Für die Verwaltung eingehender Clientverbindungen muss von einer abstrakten Klasse abgeleitet werden.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="enc_netzwerkverbindung.server.BasisClientHandler">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">enc_netzwerkverbindung.server.</span></span><span class="sig-name descname"><span class="pre">BasisClientHandler</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">server_kontext</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#enc_netzwerkverbindung.server.ServerKontext" title="enc_netzwerkverbindung.server.__kontext.ServerKontext"><span class="pre">ServerKontext</span></a></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#enc_netzwerkverbindung.server.BasisClientHandler" title="Link zu dieser Definition">¶</a></dt>
+<dd><p>Handler fuer die Verbindung zu einem Client</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="enc_netzwerkverbindung.server.BasisClientHandler.handle">
+<em class="property"><span class="pre">final</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">handle</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#enc_netzwerkverbindung.server.BasisClientHandler.handle" title="Link zu dieser Definition">¶</a></dt>
+<dd><p>Startet die Verbindung, falls moeglich</p>
+<p>Wenn es aufgrund von z.B. einem Verschluesselungsfehler nicht moeglich ist, eine Verbindung aufzubauen,
+wird die Verbindung abgebrochen.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="enc_netzwerkverbindung.server.BasisClientHandler.verbindung">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">verbindung</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">CryptoVerwalter</span></em><a class="headerlink" href="#enc_netzwerkverbindung.server.BasisClientHandler.verbindung" title="Link zu dieser Definition">¶</a></dt>
+<dd><p>Die verschluesselte Verbindung zum Client</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="enc_netzwerkverbindung.server.BasisClientHandler.verbindung_verwalten">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">verbindung_verwalten</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#enc_netzwerkverbindung.server.BasisClientHandler.verbindung_verwalten" title="Link zu dieser Definition">¶</a></dt>
+<dd><p>Abstrakte Methode zur eigentlichen Verbindungsverwaltung</p>
+</dd></dl>
+
+</dd></dl>
+
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">enc_netzwerkverbindung.server</span> <span class="kn">import</span> <span class="n">BasisClientHandler</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">Client</span><span class="p">(</span><span class="n">BasisClientHandler</span><span class="p">):</span>
+<span class="gp">&gt;&gt;&gt; </span>   <span class="k">def</span> <span class="nf">verbindung_verwalten</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="gp">&gt;&gt;&gt; </span>       <span class="nb">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">verbindung</span><span class="o">.</span><span class="n">receive</span><span class="p">())</span>
+<span class="gp">&gt;&gt;&gt; </span>       <span class="bp">self</span><span class="o">.</span><span class="n">verbindung</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="sa">b</span><span class="s2">&quot;Antwort&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="das-schlusselpaar">
+<h2>Das Schlüsselpaar<a class="headerlink" href="#das-schlusselpaar" title="Permalink to this heading">¶</a></h2>
+<p>Die Art und Weise, wie der RSA-Schlüssel erzeugt wird, muss nicht unbedingt angepasst werden.</p>
+<p>Bei der Initialisierung der Basisklasse muss ein Objekt einer von <a class="reference internal" href="generelles/rsa.html#rsaschluesselpaar"><span class="std std-ref">RSA-Schlüsselpaar</span></a> abgeleiteten Klasse als Parameter übergeben werden.</p>
+</div>
+<div class="section" id="logging-server">
+<h2>Logging - Server<a class="headerlink" href="#logging-server" title="Permalink to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="enc_netzwerkverbindung.server.ServerInfo">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">enc_netzwerkverbindung.server.</span></span><span class="sig-name descname"><span class="pre">ServerInfo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file__name__</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#enc_netzwerkverbindung.server.ServerInfo" title="Link zu dieser Definition">¶</a></dt>
+<dd><p>Kapselt die Informationen fuer den Logger des Servers</p>
+</dd></dl>
+
+<p>Im Kontext muss <code class="docutils literal notranslate"><span class="pre">get_server_logger</span></code> überschrieben werden, welches einen Logger erstellt.</p>
+</div>
+<div class="section" id="logging-client">
+<h2>Logging - Client<a class="headerlink" href="#logging-client" title="Permalink to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="enc_netzwerkverbindung.server.ClientInfo">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">enc_netzwerkverbindung.server.</span></span><span class="sig-name descname"><span class="pre">ClientInfo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">IP</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file__name__</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#enc_netzwerkverbindung.server.ClientInfo" title="Link zu dieser Definition">¶</a></dt>
+<dd><p>Kapselt die Informationen fuer den Logger des Clients</p>
+</dd></dl>
+
+<p>Im Kontext muss <code class="docutils literal notranslate"><span class="pre">get_client_logger</span></code> überschrieben werden, welches einen Logger erstellt.</p>
+</div>
+<div class="section" id="ein-beispielkontext">
+<h2>Ein Beispielkontext<a class="headerlink" href="#ein-beispielkontext" title="Permalink to this heading">¶</a></h2>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">logging</span> <span class="kn">import</span> <span class="n">getLogger</span><span class="p">,</span> <span class="n">Logger</span><span class="p">,</span> <span class="n">LoggerAdapter</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">enc_netzwerkverbindung.server</span> <span class="kn">import</span> <span class="n">ClientInfo</span><span class="p">,</span> <span class="n">ServerInfo</span><span class="p">,</span> <span class="n">ServerKontext</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">Kontext</span><span class="p">(</span><span class="n">ServerKontext</span><span class="p">):</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">client_handler</span><span class="p">):</span>
+<span class="gp">&gt;&gt;&gt; </span>        <span class="nb">super</span><span class="p">(</span><span class="n">Kontext</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">client_handler</span><span class="p">)</span>
+<span class="go">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="k">def</span> <span class="nf">get_server_logger</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">server</span><span class="p">:</span> <span class="s2">&quot;ServerInfo&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="s2">&quot;Logger&quot;</span><span class="p">,</span> <span class="s2">&quot;LoggerAdapter&quot;</span><span class="p">]:</span>
+<span class="gp">&gt;&gt;&gt; </span>        <span class="k">return</span> <span class="n">getLogger</span><span class="p">(</span><span class="n">server</span><span class="o">.</span><span class="n">file__name__</span><span class="p">)</span>
+<span class="go">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="k">def</span> <span class="nf">get_client_logger</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">client</span><span class="p">:</span> <span class="s2">&quot;ClientInfo&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="s2">&quot;Logger&quot;</span><span class="p">,</span> <span class="s2">&quot;LoggerAdapter&quot;</span><span class="p">]:</span>
+<span class="gp">&gt;&gt;&gt; </span>        <span class="k">return</span> <span class="n">getLogger</span><span class="p">(</span><span class="n">client</span><span class="o">.</span><span class="n">file__name__</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="mit-anderer-rsa-variante">
+<h2>Mit anderer RSA-Variante<a class="headerlink" href="#mit-anderer-rsa-variante" title="Permalink to this heading">¶</a></h2>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">logging</span> <span class="kn">import</span> <span class="n">getLogger</span><span class="p">,</span> <span class="n">Logger</span><span class="p">,</span> <span class="n">LoggerAdapter</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">enc_netzwerkverbindung.server</span> <span class="kn">import</span> <span class="n">ClientInfo</span><span class="p">,</span> <span class="n">ServerInfo</span><span class="p">,</span> <span class="n">ServerKontext</span>
+<span class="go">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">enc_netzwerkverbindung.server</span> <span class="kn">import</span> <span class="n">BasisClientHandler</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">Client</span><span class="p">(</span><span class="n">BasisClientHandler</span><span class="p">):</span>
+<span class="gp">&gt;&gt;&gt; </span>   <span class="k">def</span> <span class="nf">verbindung_verwalten</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="gp">&gt;&gt;&gt; </span>       <span class="nb">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">verbindung</span><span class="o">.</span><span class="n">receive</span><span class="p">())</span>
+<span class="gp">&gt;&gt;&gt; </span>       <span class="bp">self</span><span class="o">.</span><span class="n">verbindung</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="sa">b</span><span class="s2">&quot;Antwort&quot;</span><span class="p">)</span>
+<span class="go">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">enc_netzwerkverbindung.server</span> <span class="kn">import</span> <span class="n">RSASchluesselpaar</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">Crypto.PublicKey</span> <span class="kn">import</span> <span class="n">RSA</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">RSAVariante</span><span class="p">(</span><span class="n">RSASchluesselpaar</span><span class="p">):</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="k">def</span> <span class="nf">_setup</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">RsaKey</span><span class="p">:</span>
+<span class="gp">&gt;&gt;&gt; </span>        <span class="c1"># Der Standardwert ist sowieso 4096</span>
+<span class="gp">&gt;&gt;&gt; </span>        <span class="k">return</span> <span class="n">RSA</span><span class="o">.</span><span class="n">generate</span><span class="p">(</span><span class="mi">4096</span><span class="p">)</span>
+<span class="go">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">Kontext</span><span class="p">(</span><span class="n">ServerKontext</span><span class="p">):</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">client_handler</span><span class="p">):</span>
+<span class="gp">&gt;&gt;&gt; </span>        <span class="nb">super</span><span class="p">(</span><span class="n">Kontext</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">client_handler</span><span class="p">,</span> <span class="n">RSAVariante</span><span class="p">())</span>
+<span class="go">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="k">def</span> <span class="nf">get_server_logger</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">server</span><span class="p">:</span> <span class="s2">&quot;ServerInfo&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="s2">&quot;Logger&quot;</span><span class="p">,</span> <span class="s2">&quot;LoggerAdapter&quot;</span><span class="p">]:</span>
+<span class="gp">&gt;&gt;&gt; </span>        <span class="k">return</span> <span class="n">getLogger</span><span class="p">(</span><span class="n">server</span><span class="o">.</span><span class="n">file__name__</span><span class="p">)</span>
+<span class="go">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="k">def</span> <span class="nf">get_client_logger</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">client</span><span class="p">:</span> <span class="s2">&quot;ClientInfo&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="s2">&quot;Logger&quot;</span><span class="p">,</span> <span class="s2">&quot;LoggerAdapter&quot;</span><span class="p">]:</span>
+<span class="gp">&gt;&gt;&gt; </span>        <span class="k">return</span> <span class="n">getLogger</span><span class="p">(</span><span class="n">client</span><span class="o">.</span><span class="n">file__name__</span><span class="p">)</span>
+<span class="go">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">enc_netzwerkverbindung.server</span> <span class="kn">import</span> <span class="n">SocketServer</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">kontext</span> <span class="o">=</span> <span class="n">Kontext</span><span class="p">(</span><span class="n">Client</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">server</span> <span class="o">=</span> <span class="n">SocketServer</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">server</span><span class="o">.</span><span class="n">start</span><span class="p">(</span><span class="n">kontext</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="../index.html">Inhaltsverzeichnis</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">Der Server</a></li>
+<li><a class="reference internal" href="#anpassung">Anpassung</a><ul>
+<li><a class="reference internal" href="#der-kontext">Der Kontext</a></li>
+<li><a class="reference internal" href="#der-clienthandler">Der ClientHandler</a></li>
+<li><a class="reference internal" href="#das-schlusselpaar">Das Schlüsselpaar</a></li>
+<li><a class="reference internal" href="#logging-server">Logging - Server</a></li>
+<li><a class="reference internal" href="#logging-client">Logging - Client</a></li>
+<li><a class="reference internal" href="#ein-beispielkontext">Ein Beispielkontext</a></li>
+<li><a class="reference internal" href="#mit-anderer-rsa-variante">Mit anderer RSA-Variante</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div>
+    <h4>Vorheriges Thema</h4>
+    <p class="topless"><a href="client.html"
+                          title="vorheriges Kapitel">Der Client</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>Diese Seite</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/nutzung/server.rst.txt"
+            rel="nofollow">Quellcode anzeigen</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Schnellsuche</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Los" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="Stichwortverzeichnis"
+             >Index</a></li>
+        <li class="right" >
+          <a href="client.html" title="Der Client"
+             >zurück</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Enc-Netzwerkverbindung  Dokumentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="nutzung.html" >Nutzung</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Der Server</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2022, heureka-code.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.0.2.
+    </div>
+  </body>
+</html>
