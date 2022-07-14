@@ -7,7 +7,8 @@ from enc_netzwerkverbindung._generell import RSASchluessel, get_ip
 
 from .__client_handler import BasisClientHandler
 from .__uebergabe_sk_pk import uebergebe_sk_pk
-from .verwaltung.rsa_verwalter import RSAVerwalter
+from .__verwaltung.rsa_verwalter import RSAVerwalter
+from .__server_info import ServerInfo
 
 
 class SocketServer:
@@ -32,7 +33,7 @@ class SocketServer:
     def start(self, server_kontext: "s_kontext.ServerKontext"):
         """ Verwaltet den Serverprozess """
         self._server_kontext = server_kontext
-        self._logger = self._server_kontext.get_server_logger(__name__)
+        self._logger = self._server_kontext.get_server_logger(ServerInfo(file__name__=__name__))
 
         self._logger.debug("Server startet")
         self._logger.info(f"Server offen: {get_ip()}:{self.PORT}      ({self.HOST})")

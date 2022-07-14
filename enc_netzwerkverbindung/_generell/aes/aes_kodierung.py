@@ -1,5 +1,6 @@
 from Crypto import Random
 from Crypto.Cipher import AES
+from .aes_gen import AESSchluessel
 
 
 class AESKodierung:
@@ -13,6 +14,11 @@ class AESKodierung:
         """
         self.__key = key
         self.CHUNKS = 32 * 1024
+
+    @classmethod
+    def new(cls):
+        """ Erstellt eine neue Kodierung mit zufaelligem Schluessel """
+        return cls(AESSchluessel.generiere_aes_schluessel())
 
     @property
     def key(self) -> bytes:

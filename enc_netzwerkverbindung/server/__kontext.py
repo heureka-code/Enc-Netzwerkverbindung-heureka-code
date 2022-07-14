@@ -4,7 +4,9 @@ from typing import final
 
 import enc_netzwerkverbindung.server.__client_handler as cl_h
 
-from .verwaltung import RSASchluesselpaar, RSAVerwalter
+from .__verwaltung import RSASchluesselpaar, RSAVerwalter
+from .__client_info import ClientInfo
+from .__server_info import ServerInfo
 
 
 class ServerKontext(ABC):
@@ -22,12 +24,12 @@ class ServerKontext(ABC):
         self.__rsa_schluesselpaar: RSASchluesselpaar = rsa_schluesselpaar if rsa_schluesselpaar else RSAVerwalter()
 
     @abstractmethod
-    def get_server_logger(self, name) -> ["Logger", "LoggerAdapter"]:
+    def get_server_logger(self, server: "ServerInfo") -> ["Logger", "LoggerAdapter"]:
         """ Generiert einen Logger fuer den Server """
         pass
 
     @abstractmethod
-    def get_client_logger(self, ip) -> ["Logger", "LoggerAdapter"]:
+    def get_client_logger(self, client: "ClientInfo") -> ["Logger", "LoggerAdapter"]:
         """ Generiert einen fuer jeden Client individuellen Logger """
         pass
 
@@ -36,13 +38,8 @@ class ServerKontext(ABC):
         """ Liefert das RSA-Schluesselpaar """
         return self.__rsa_schluesselpaar
 
+    @final
     @property
     def client_handler(self) -> "type[cl_h.BasisClientHandler]":
         """ Die fuer einkommende Anfragen zu verwendende Klasse """
         return self.__client
-
-    @client_handler.setter
-    def client_handler(self, client: "type[cl_h.BasisClientHandler]"):
-        """ Setzt die fuer einkommende Anfragen zu verwendende Klasse """
-        if issubclass(client, cl_h.BasisClientHandler):
-            self.__client = client

@@ -15,13 +15,12 @@ class CryptoClient(verbindung.BasisCOM):
         super(CryptoClient, self).__init__()
         self.__verbindung = verbindung.ClientVerbindungsVerwalter(host, port)
         rsa_key = self.__verbindung.receive()
-        aes_key = AESSchluessel.generiere_aes_schluessel()
-        aes_kodierung = AESKodierung(aes_key)
+        aes_kodierung = AESKodierung.new()
 
         self.__enc = EncVerbindung(self.__verbindung, aes_kodierung)
 
         rsa_kodierung = RSAKodierung()
-        self.__verbindung.send(rsa_kodierung.encrypt(rsa_key, aes_key))
+        self.__verbindung.send(rsa_kodierung.encrypt(rsa_key, aes_kodierung.key))
 
     def send(self, data: [str, bytes]):
         """
