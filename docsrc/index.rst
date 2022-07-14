@@ -20,3 +20,5 @@ Indices and tables
 
 * :ref:`genindex`
 * :ref:`search`
+* Quellcode: https://github.com/heureka-code/Enc-Netzwerkverbindung-heureka-code
+* PyPI: https://pypi.org/project/enc-netzwerkverbindung-heureka-code/
